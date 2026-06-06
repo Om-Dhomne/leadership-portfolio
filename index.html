@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership Portfolio — Rajan Iyer · March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-muted: #8a8898;
+    --paper: #faf9f7;
+    --paper-warm: #f4f1ec;
+    --paper-card: #ffffff;
+    --rule: #e2ded8;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0eb;
+    --accent-mid: #4a8c62;
+    --warn: #c4622d;
+    --warn-light: #fdf0e8;
+    --warn-mid: #e07a4a;
+    --gold: #b08d3c;
+    --gold-light: #fdf6e3;
+    --score-fill: #2d5a3d;
+    --gap-fill: #c4622d;
+    --neutral-fill: #6b7080;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PRINT / EXPORT ── */
+  @media print {
+    body { background: white; }
+    .no-print { display: none !important; }
+    .section { break-inside: avoid; }
+    details { open: true; }
+    details summary { display: none; }
+    details > * { display: block !important; }
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    border-bottom: 2px solid var(--ink);
+    padding: 40px 0 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+  }
+
+  .header-left {}
+
+  .employee-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .employee-role {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    font-weight: 400;
+  }
+
+  .employee-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 12px;
+  }
+
+  .meta-tag {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.3px;
+  }
+
+  .meta-tag span {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .period-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .uid-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    letter-spacing: 1px;
+    border: 1px solid var(--rule);
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .export-btn {
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    letter-spacing: 0.3px;
+  }
+
+  .export-btn:hover { background: #333; }
+
+  /* ── SECTION COMMONS ── */
+  .section {
+    margin-top: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    flex: 1;
+  }
+
+  .section-signal {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .signal-strong { background: var(--accent-light); color: var(--accent); }
+  .signal-warn   { background: var(--warn-light); color: var(--warn); }
+  .signal-gold   { background: var(--gold-light); color: var(--gold); }
+  .signal-neutral { background: #f0f0f0; color: var(--ink-soft); }
+
+  /* ── HERO SECTION (Monthly in Review) ── */
+  .hero-section {
+    margin-top: 40px;
+    background: var(--ink);
+    border-radius: 8px;
+    padding: 36px 40px;
+    color: white;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: white;
+    max-width: 600px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: #a8d4b8;
+  }
+
+  .hero-narrative {
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    max-width: 640px;
+    border-left: 2px solid rgba(255,255,255,0.2);
+    padding-left: 16px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 28px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .hero-stat {
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+  }
+
+  .hero-stat:hover { background: rgba(255,255,255,0.1); }
+
+  .hero-stat::after {
+    content: '↓';
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .hero-stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-stat-delta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #a8d4b8;
+    margin-left: 6px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ── WHAT I DELIVERED ── */
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .delivery-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+
+  .delivery-card.primary {
+    border-left: 3px solid var(--accent);
+  }
+
+  .delivery-card.secondary {
+    border-left: 3px solid var(--neutral-fill);
+  }
+
+  .card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .card-sublabel {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .card-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .delivery-sub-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .mini-stat {
+    flex: 1;
+    background: var(--paper-warm);
+    border-radius: 4px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .mini-stat-val {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .mini-stat-label {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .narrative-block {
+    background: var(--paper-warm);
+    border-radius: 6px;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--accent);
+    margin-top: 16px;
+  }
+
+  .narrative-block strong { color: var(--ink); }
+
+  /* IP commits */
+  .ip-list {
+    margin-top: 20px;
+  }
+
+  .ip-list-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+
+  .ip-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: flex-start;
+  }
+
+  .ip-item:last-child { border-bottom: none; }
+
+  .ip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .ip-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .ip-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    margin-top: 1px;
+  }
+
+  details .ip-item:nth-child(n+4) { display: flex; }
+
+  /* ── GROWTH AREAS ── */
+  .capability-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .cap-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 44px;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cap-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .cap-label.gap-label {
+    color: var(--warn);
+  }
+
+  .cap-bar-wrap {
+    position: relative;
+    height: 10px;
+    background: var(--rule);
+    border-radius: 10px;
+    overflow: visible;
+  }
+
+  .cap-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.6s ease;
+  }
+
+  .cap-bar.normal { background: var(--accent); }
+  .cap-bar.gap    { background: var(--gap-fill); }
+
+  .threshold-line {
+    position: absolute;
+    left: 60%;
+    top: -4px;
+    bottom: -4px;
+    width: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+  }
+
+  .threshold-tip {
+    position: absolute;
+    left: 60%;
+    top: -22px;
+    transform: translateX(-50%);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+
+  .cap-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .cap-score.normal { color: var(--accent); }
+  .cap-score.gap    { color: var(--warn); }
+
+  .gap-callout {
+    margin-top: 18px;
+    background: var(--warn-light);
+    border: 1px solid #f0d0bc;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: var(--warn);
+    line-height: 1.6;
+  }
+
+  .gap-callout strong { font-weight: 600; }
+
+  .capability-narrative {
+    margin-top: 16px;
+  }
+
+  /* ── CAREER OUTLOOK ── */
+  .timeline-strip {
+    position: relative;
+    padding: 40px 0 20px;
+    overflow: hidden;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--rule);
+  }
+
+  .timeline-nodes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tnode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .tnode-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+    z-index: 2;
+  }
+
+  .tnode.achieved .tnode-circle {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .tnode.current .tnode-circle {
+    background: white;
+    border-color: var(--ink);
+    border-width: 3px;
+    box-shadow: 0 0 0 3px rgba(45,90,61,0.2);
+  }
+
+  .tnode.projected .tnode-circle {
+    background: var(--paper);
+    border-color: var(--accent);
+    border-style: dashed;
+  }
+
+  .tnode.future .tnode-circle {
+    background: var(--paper);
+    border-color: var(--rule);
+  }
+
+  .tnode-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .tnode.future .tnode-level { color: var(--ink-muted); }
+
+  .tnode-date {
+    font-size: 11px;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+
+  .tnode-badge {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .badge-done { background: var(--accent-light); color: var(--accent); }
+  .badge-now  { background: var(--ink); color: white; }
+  .badge-proj { background: var(--gold-light); color: var(--gold); border: 1px dashed var(--gold); }
+  .badge-plan { background: var(--paper-warm); color: var(--ink-muted); }
+
+  .career-callout {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .career-box {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  .career-box.ahead {
+    border-left: 3px solid var(--gold);
+  }
+
+  .career-box-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+
+  .career-box-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .career-box-sub {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 3px;
+  }
+
+  .gaps-list {
+    margin-top: 14px;
+  }
+
+  .gaps-list-title {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .gap-item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13.5px;
+    color: var(--warn);
+  }
+
+  .gap-item-row:last-child { border-bottom: none; }
+
+  .gap-item-row::before {
+    content: '!';
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--warn-light);
+    color: var(--warn);
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── KPI / BUSINESS IMPACT ── */
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  .kpi-table th {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--ink-muted);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+  }
+
+  .kpi-table th:last-child { text-align: center; }
+
+  .kpi-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+  }
+
+  .kpi-table tr:last-child td { border-bottom: none; }
+
+  .kpi-name { font-weight: 500; color: var(--ink); }
+
+  .kpi-bar-cell { width: 120px; }
+
+  .kpi-mini-bar {
+    height: 6px;
+    background: var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .kpi-mini-fill { height: 100%; border-radius: 6px; }
+  .kpi-mini-fill.hit { background: var(--accent); }
+  .kpi-mini-fill.miss { background: var(--gap-fill); }
+  .kpi-mini-fill.partial { background: var(--gold); }
+
+  .status-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  .pill-hit     { background: var(--accent-light); color: var(--accent); }
+  .pill-miss    { background: var(--warn-light); color: var(--warn); }
+  .pill-partial { background: var(--gold-light); color: var(--gold); }
+  .pill-pending { background: #f0f0f0; color: var(--ink-muted); }
+
+  .kpi-verified-row {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 10px;
+  }
+
+  /* ── CONSTRAINTS ── */
+  .constraint-summary-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .cst-stat {
+    flex: 1;
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .cst-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .cst-stat-label {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .cst-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .cst-item {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .cst-type-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .dot-resolved { background: var(--accent); }
+  .dot-open     { background: var(--warn); }
+
+  .cst-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    flex: 1;
+    line-height: 1.5;
+  }
+
+  .cst-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .cst-tag {
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 500;
+    background: var(--paper-warm);
+    color: var(--ink-muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .cst-status-pill {
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  .cst-resolved-pill { background: var(--accent-light); color: var(--accent); }
+  .cst-open-pill     { background: var(--warn-light); color: var(--warn); }
+
+  /* ── COLLAPSIBLE ── */
+  details {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  summary {
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: '＋';
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+
+  details[open] summary::after { content: '－'; }
+
+  .details-inner {
+    padding: 0 18px 18px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 60px;
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .footer-uid {
+    letter-spacing: 1px;
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .hero-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="employee-name">Rajan Iyer</div>
+      <div class="employee-role">Production Planning Lead — Sterile Injectables</div>
+      <div class="employee-meta">
+        <span class="meta-tag">Program: <span>Facility 3 Commercialization</span></span>
+        <span class="meta-tag">Org: <span>Vayura Lifesciences</span></span>
+        <span class="meta-tag">Tenure: <span>19 months</span></span>
+        <span class="meta-tag">Level: <span>V2</span></span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="period-label">March 2026</div>
+      <div class="uid-badge">PDGMS-EMP-00512</div>
+      <button class="export-btn no-print" onclick="window.print()">Export PDF</button>
+    </div>
+  </header>
+
+  <!-- ── 1. MONTHLY IN REVIEW (Hero) ── -->
+  <div class="hero-section">
+    <div class="hero-eyebrow">Monthly In Review</div>
+    <div class="hero-headline">
+      Strongest month since joining — <em>broke a 3-month regulatory logjam</em> and is tracking early for promotion.
+    </div>
+    <div class="hero-narrative">
+      Composite score jumped from 64 to 71, driven by a breakthrough in Facility 3 batch validation. Delivered 16 of 20 tasks — including the process validation protocol stuck in review since December. Framework application (52) remains below threshold, but delivery and IP scores now exceed V3 requirements.
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat" onclick="scrollTo('sec-capability')">
+        <div>
+          <span class="hero-stat-value">71</span>
+          <span class="hero-stat-delta">+7 ↑</span>
+        </div>
+        <div class="hero-stat-label">Composite Score · was 64</div>
+      </div>
+      <div class="hero-stat" onclick="scrollTo('sec-delivery')">
+        <div>
+          <span class="hero-stat-value">16/20</span>
+        </div>
+        <div class="hero-stat-label">Deliverables Completed</div>
+      </div>
+      <div class="hero-stat" onclick="scrollTo('sec-delivery')">
+        <div>
+          <span class="hero-stat-value">7</span>
+        </div>
+        <div class="hero-stat-label">Original Contributions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2. WHAT I DELIVERED ── -->
+  <section class="section" id="sec-delivery">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">What I Delivered</span>
+      <span class="section-signal signal-strong">80% completion rate</span>
+    </div>
+
+    <div class="delivery-grid">
+      <div class="delivery-card primary">
+        <div class="card-number">16</div>
+        <div class="card-sublabel">of 20 assigned</div>
+        <div class="card-label">Deliverables Completed (QA Passed)</div>
+        <div class="delivery-sub-row">
+          <div class="mini-stat">
+            <div class="mini-stat-val">2</div>
+            <div class="mini-stat-label">In Progress</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-val">1</div>
+            <div class="mini-stat-label">Awaiting Review</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-val">1</div>
+            <div class="mini-stat-label">Not Started</div>
+          </div>
+        </div>
+      </div>
+      <div class="delivery-card secondary">
+        <div class="card-number">7</div>
+        <div class="card-sublabel">original contributions</div>
+        <div class="card-label">Knowledge Work Created This Month</div>
+        <div class="delivery-sub-row">
+          <div class="mini-stat" style="flex: none; padding: 10px 16px;">
+            <div class="mini-stat-val" style="font-size:13px; color: var(--accent);">1 adopted org-wide</div>
+            <div class="mini-stat-label">Deviation SOP → mandated across all 3 facilities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrative-block">
+      Rajan shipped 16 of 20 deliverables — his highest completion rate since the Facility 3 program launched. The process validation protocol was the critical win: it had been cycling between regulatory affairs and QA since <strong>December</strong>, and Rajan broke the logjam by organizing a <strong>joint review session</strong> with both teams instead of sequential sign-offs. He created 7 original work items this month, including the deviation investigation SOP that the Head of Quality has now <strong>mandated as the standard across all three manufacturing facilities</strong>.
+    </div>
+
+    <!-- IP List -->
+    <div class="ip-list">
+      <div class="ip-list-title">Original Work — Top 3 Highlights</div>
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc">Process validation protocol — lyophilized injectable line (3 product families, 12 SKUs)</div>
+        <div class="ip-date">05 Mar</div>
+      </div>
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc">Deviation investigation SOP — root cause analysis workflow for OOS results. Adopted org-wide.</div>
+        <div class="ip-date">14 Mar</div>
+      </div>
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc">Yield optimization report — identified 8% fill-weight variance in vial line 2, proposed nozzle recalibration</div>
+        <div class="ip-date">29 Mar</div>
+      </div>
+
+      <details style="margin-top: 10px; border: 1px solid var(--rule); border-radius:6px;">
+        <summary>4 more contributions</summary>
+        <div class="details-inner">
+          <div class="ip-item">
+            <div class="ip-dot"></div>
+            <div class="ip-desc">Batch record template — sterile fill-finish operations with in-process control checkpoints</div>
+            <div class="ip-date">09 Mar</div>
+          </div>
+          <div class="ip-item">
+            <div class="ip-dot"></div>
+            <div class="ip-desc">Equipment qualification matrix — IQ/OQ/PQ status tracker for 14 critical equipment items in Facility 3</div>
+            <div class="ip-date">18 Mar</div>
+          </div>
+          <div class="ip-item">
+            <div class="ip-dot"></div>
+            <div class="ip-desc">Environmental monitoring trend analysis — 6-month particulate and viable data for Grade A/B cleanrooms</div>
+            <div class="ip-date">22 Mar</div>
+          </div>
+          <div class="ip-item">
+            <div class="ip-dot"></div>
+            <div class="ip-desc">Vendor qualification checklist — raw material and primary packaging supplier audit framework</div>
+            <div class="ip-date">26 Mar</div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── 3. GROWTH AREAS ── -->
+  <section class="section" id="sec-capability">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Growth Areas</span>
+      <span class="section-signal signal-warn">2 areas below threshold</span>
+    </div>
+
+    <div class="capability-grid">
+      <!-- threshold tip shown once above the bars -->
+      <div class="cap-row" style="grid-template-columns: 150px 1fr 44px; margin-bottom: 4px;">
+        <div></div>
+        <div style="position:relative; height: 20px;">
+          <span style="position:absolute; left: 60%; transform: translateX(-50%); font-family:'DM Mono',monospace; font-size: 10px; color: var(--ink-muted); white-space:nowrap;">← V3 threshold (60)</span>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label">Engagement</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar normal" style="width: 85%"></div>
+        </div>
+        <div class="cap-score normal">85</div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label">Delivery</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar normal" style="width: 80%"></div>
+        </div>
+        <div class="cap-score normal">80</div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label">Original Work</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar normal" style="width: 74%"></div>
+        </div>
+        <div class="cap-score normal">74</div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label">Target Performance</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar normal" style="width: 68%"></div>
+        </div>
+        <div class="cap-score normal">68</div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label gap-label">Structured Thinking ⚠</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar gap" style="width: 52%"></div>
+        </div>
+        <div class="cap-score gap">52</div>
+      </div>
+
+      <div class="cap-row">
+        <div class="cap-label gap-label">Process Adoption ⚠</div>
+        <div class="cap-bar-wrap">
+          <div class="threshold-line"></div>
+          <div class="cap-bar gap" style="width: 58%"></div>
+        </div>
+        <div class="cap-score gap">58</div>
+      </div>
+    </div>
+
+    <div class="gap-callout">
+      <strong>Two areas below the V3 threshold (60):</strong> Structured Thinking (52) and Process Adoption (58). Rajan tends to troubleshoot production problems directly through technical instinct — effective for quick fixes, but root causes sometimes recur. Consistently applying and documenting structured frameworks over the next 3–4 months would clear both gaps.
+    </div>
+
+    <div class="narrative-block capability-narrative">
+      Delivery (80) and engagement (85) are strongest — he ships consistently and shows up to every organizational ritual. Original work (74) has been climbing steadily since he started building reusable SOPs that other teams adopt. The gap is structured thinking (52) and process adoption (58) — not performance failures, but the growth edge for the next level.
+    </div>
+  </section>
+
+  <!-- ── 4. CAREER OUTLOOK ── -->
+  <section class="section" id="sec-career">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Career Outlook</span>
+      <span class="section-signal signal-gold">3 months ahead of plan</span>
+    </div>
+
+    <div class="timeline-strip">
+      <div class="timeline-line"></div>
+      <div class="timeline-nodes">
+
+        <div class="tnode achieved">
+          <div class="tnode-circle"></div>
+          <div class="tnode-level">V1</div>
+          <div class="tnode-date">Aug 2024</div>
+          <span class="tnode-badge badge-done">Done</span>
+        </div>
+
+        <div class="tnode current">
+          <div class="tnode-circle"></div>
+          <div class="tnode-level">V2</div>
+          <div class="tnode-date">Nov 2025 · 5 mo in</div>
+          <span class="tnode-badge badge-now">Now</span>
+        </div>
+
+        <div class="tnode projected">
+          <div class="tnode-circle"></div>
+          <div class="tnode-level">V3</div>
+          <div class="tnode-date">Feb 2027 projected<br><span style="color:var(--gold); font-size:10px;">Plan: May 2027</span></div>
+          <span class="tnode-badge badge-proj">3 mo early</span>
+        </div>
+
+        <div class="tnode future">
+          <div class="tnode-circle"></div>
+          <div class="tnode-level">V4</div>
+          <div class="tnode-date">Aug 2030</div>
+          <span class="tnode-badge badge-plan">Planned</span>
+        </div>
+
+        <div class="tnode future">
+          <div class="tnode-circle"></div>
+          <div class="tnode-level">V5</div>
+          <div class="tnode-date">Aug 2036</div>
+          <span class="tnode-badge badge-plan">Planned</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="career-callout">
+      <div class="career-box ahead">
+        <div class="career-box-label">Projected Next Level</div>
+        <div class="career-box-value">V3 — Program Lead</div>
+        <div class="career-box-sub">February 2027 · ~3 months ahead of plan</div>
+      </div>
+      <div class="career-box">
+        <div class="career-box-label">Delivery & Original Work</div>
+        <div class="career-box-value">Both already exceed V3 thresholds</div>
+        <div class="career-box-sub">Unusual for someone 5 months into V2</div>
+      </div>
+    </div>
+
+    <div class="gaps-list">
+      <div class="gaps-list-title">What needs to close before V3</div>
+      <div class="gap-item-row">Framework application score (52) below V3 minimum (60)</div>
+      <div class="gap-item-row">Process adoption score (58) below V3 minimum (60)</div>
+    </div>
+  </section>
+
+  <!-- ── 5. BUSINESS IMPACT (KPI) ── -->
+  <section class="section" id="sec-kpi">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Business Impact</span>
+      <span class="section-signal signal-strong">3 of 5 targets met</span>
+    </div>
+
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Target</th>
+          <th>Result</th>
+          <th class="kpi-bar-cell">Progress</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="kpi-name">Equipment Qualifications</td>
+          <td>10 / 8 items</td>
+          <td class="kpi-bar-cell">
+            <div class="kpi-mini-bar"><div class="kpi-mini-fill hit" style="width:100%"></div></div>
+          </td>
+          <td><span class="status-pill pill-hit">Hit</span></td>
+        </tr>
+        <tr>
+          <td class="kpi-name">SOPs Drafted & Approved</td>
+          <td>7 / 5 docs</td>
+          <td class="kpi-bar-cell">
+            <div class="kpi-mini-bar"><div class="kpi-mini-fill hit" style="width:100%"></div></div>
+          </td>
+          <td><span class="status-pill pill-hit">Hit</span></td>
+        </tr>
+        <tr>
+          <td class="kpi-name">Operator Training Sessions</td>
+          <td>4 / 4 batches</td>
+          <td class="kpi-bar-cell">
+            <div class="kpi-mini-bar"><div class="kpi-mini-fill hit" style="width:100%"></div></div>
+          </td>
+          <td><span class="status-pill pill-hit">Hit</span></td>
+        </tr>
+        <tr>
+          <td class="kpi-name">Batch Success Rate</td>
+          <td>88% / 92%</td>
+          <td class="kpi-bar-cell">
+            <div class="kpi-mini-bar"><div class="kpi-mini-fill miss" style="width:96%"></div></div>
+          </td>
+          <td><span class="status-pill pill-miss">Miss</span></td>
+        </tr>
+        <tr>
+          <td class="kpi-name">Deviation Closure Rate</td>
+          <td>67% / 85%</td>
+          <td class="kpi-bar-cell">
+            <div class="kpi-mini-bar"><div class="kpi-mini-fill partial" style="width:79%"></div></div>
+          </td>
+          <td><span class="status-pill pill-partial">Partial</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="kpi-verified-row">
+      <span class="verified-badge">✓ 3 of 5 independently verified by TPM</span>
+      <span>· Batch Success Rate miss attributable to HEPA filter delay (see Barriers)</span>
+    </div>
+  </section>
+
+  <!-- ── 6. BARRIERS & RESOLUTIONS (Constraints) ── -->
+  <section class="section" id="sec-constraints">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Barriers & Resolutions</span>
+      <span class="section-signal signal-neutral">5 of 8 resolved</span>
+    </div>
+
+    <div class="constraint-summary-row">
+      <div class="cst-stat">
+        <div class="cst-stat-val">8</div>
+        <div class="cst-stat-label">Raised</div>
+      </div>
+      <div class="cst-stat">
+        <div class="cst-stat-val" style="color: var(--accent);">5</div>
+        <div class="cst-stat-label">Resolved</div>
+      </div>
+      <div class="cst-stat">
+        <div class="cst-stat-val" style="color: var(--warn);">3</div>
+        <div class="cst-stat-label">Still Open</div>
+      </div>
+      <div class="cst-stat">
+        <div class="cst-stat-val">62%</div>
+        <div class="cst-stat-label">Resolution Rate</div>
+      </div>
+    </div>
+
+    <div class="narrative-block" style="margin-bottom: 16px;">
+      Two patterns dominated: <strong>external dependencies</strong> (contract lab turnaround, vendor lead times) and <strong>approval bottlenecks</strong>. Rajan resolved the regulatory review bottleneck by switching from sequential to joint review sessions — a process improvement that now saves <strong>3 weeks per protocol</strong>. The second-shift supervisor vacancy remains open and is capping Facility 3 throughput at 60% capacity.
+    </div>
+
+    <div class="cst-list">
+      <div class="cst-item">
+        <div class="cst-type-dot dot-resolved"></div>
+        <div>
+          <div class="cst-desc">HEPA filter replacement for Cleanroom 3B delayed — vendor lead time 6 weeks, 2 batches failed during wait</div>
+          <div class="cst-meta">
+            <span class="cst-tag">assumptions</span>
+            <span class="cst-status-pill cst-resolved-pill">Resolved 19 Mar</span>
+          </div>
+        </div>
+      </div>
+      <div class="cst-item">
+        <div class="cst-type-dot dot-resolved"></div>
+        <div>
+          <div class="cst-desc">Regulatory affairs sequential review adding 3 weeks to every protocol approval — switched to joint sessions</div>
+          <div class="cst-meta">
+            <span class="cst-tag">permissions</span>
+            <span class="cst-status-pill cst-resolved-pill">Resolved 05 Mar</span>
+          </div>
+        </div>
+      </div>
+      <div class="cst-item">
+        <div class="cst-type-dot dot-open"></div>
+        <div>
+          <div class="cst-desc">Contract testing lab turnaround on deviation root cause — 4 open deviations waiting 18+ days for results</div>
+          <div class="cst-meta">
+            <span class="cst-tag">internal_support</span>
+            <span class="cst-status-pill cst-open-pill">Still Open</span>
+          </div>
+        </div>
+      </div>
+      <div class="cst-item">
+        <div class="cst-type-dot dot-open"></div>
+        <div>
+          <div class="cst-desc">Second shift supervisor vacancy — production planning limited to single shift since February</div>
+          <div class="cst-meta">
+            <span class="cst-tag">talent</span>
+            <span class="cst-status-pill cst-open-pill">Still Open · High impact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <details style="margin-top: 12px;">
+      <summary>1 more resolved constraint</summary>
+      <div class="details-inner" style="padding-top: 14px;">
+        <div class="cst-item" style="border: none; padding: 0;">
+          <div class="cst-type-dot dot-resolved"></div>
+          <div>
+            <div class="cst-desc">Assumed Facility 3 compressed air system was qualified — discovered DQ/IQ incomplete during batch review</div>
+            <div class="cst-meta">
+              <span class="cst-tag">assumptions</span>
+              <span class="cst-status-pill cst-resolved-pill">Resolved 24 Mar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <span class="footer-uid">PDGMS-EMP-00512 · PF-2026-03-00512</span>
+    <span>Generated 02 Apr 2026 · PDGMS v1 · Vayura Lifesciences</span>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.section, .hero-section').forEach(el => observer.observe(el));
+
+  // Smooth scroll to sections
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>
