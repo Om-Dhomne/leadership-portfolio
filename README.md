@@ -174,16 +174,6 @@ Interactive HTML implementation of the redesigned experience.
 
 ![Hero Section](assets/hero.png)
 
-### Strengths & Growth Areas
-
-![Growth Areas](assets/growth-areas.png)
-
-### Career Outlook
-
-![Career Outlook](assets/career-outlook.png)
-
----
-
 ## Before vs After
 
 ### Before
@@ -258,10 +248,4 @@ If given additional time, I would explore:
 
 Chemical Engineering Undergraduate @ IIT Madras
 
-Interested in Product, Analytics, AI, and Startup Ecosystems.
-
 LinkedIn: https://linkedin.com/in/omdhomne
-
----
-
-Created as part of a Product Management / Product Design internship assignment focused on information architecture, UX thinking, storytelling with data, and stakeholder-centric design.
