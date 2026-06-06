@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership Portfolio — Rajan Iyer · March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --ink: #18181b;
+  --ink-soft: #3f3f46;
+  --ink-muted: #71717a;
+  --paper: #f9f8f6;
+  --paper-warm: #f2efe9;
+  --card: #ffffff;
+  --rule: #e4e0d8;
+  --rule-soft: #ede9e1;
+  --green: #2d5a3d;
+  --green-light: #e8f0eb;
+  --green-mid: #4a8c62;
+  --red: #b84c2c;
+  --red-light: #fdf0eb;
+  --gold: #a07828;
+  --gold-light: #fdf5e0;
+  --blue: #2d4a7a;
+  --blue-light: #e8edf6;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: #fff; font-size: 13px; }
+  .no-print { display: none !important; }
+  details[open] > * { display: block !important; }
+  details summary { pointer-events: none; }
+  details summary::after { display: none; }
+  .page { padding: 0 32px 40px; }
+  .section { margin-top: 32px; }
+}
+
+/* ── PAGE ── */
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 28px 100px;
+}
+
+/* ── HEADER ── */
+.header {
+  padding: 40px 0 26px;
+  border-bottom: 2.5px solid var(--ink);
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ink);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.avatar-initials {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.header-main { flex: 1; }
+
+.employee-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.employee-role {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 5px;
+}
+
+.header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 10px;
+}
+
+.hmeta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.hmeta b { color: var(--ink-soft); font-weight: 500; }
+
+.header-right {
+  text-align: right;
+  padding-bottom: 4px;
+}
+
+.period {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.uid {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  letter-spacing: 0.8px;
+  border: 1px solid var(--rule);
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.export-btn {
+  margin-top: 8px;
+  display: block;
+  margin-left: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  padding: 6px 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+.export-btn:hover { background: #333; }
+
+/* ── SECTION ── */
+.section {
+  margin-top: 52px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.section.visible { opacity:1; transform:translateY(0); }
+
+.sec-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 22px;
+}
+
+.sec-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  letter-spacing: 1.2px;
+}
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.sec-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pill-green  { background: var(--green-light); color: var(--green); }
+.pill-red    { background: var(--red-light);   color: var(--red); }
+.pill-gold   { background: var(--gold-light);  color: var(--gold); }
+.pill-blue   { background: var(--blue-light);  color: var(--blue); }
+.pill-neutral{ background: var(--paper-warm);  color: var(--ink-muted); }
+
+/* ── NARRATIVE LINE ── */
+.narrative-line {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule);
+  line-height: 1.6;
+}
+
+/* ── HERO BLOCK ── */
+.hero {
+  margin-top: 38px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.hero.visible { opacity:1; transform:translateY(0); }
+
+.hero-card {
+  background: var(--ink);
+  border-radius: 10px;
+  padding: 36px 40px 32px;
+  color: #fff;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  margin-bottom: 14px;
+}
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #fff;
+  max-width: 560px;
+}
+.hero-headline em { font-style: italic; color: #9fd4b4; }
+
+.hero-sub {
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.7;
+  max-width: 600px;
+  border-left: 2px solid rgba(255,255,255,0.18);
+  padding-left: 16px;
+}
+
+/* stat row */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 28px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.06);
+}
+
+.hstat {
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background 0.15s;
+  position: relative;
+}
+.hstat:hover { background: rgba(255,255,255,0.09); }
+
+.hstat-arrow {
+  position: absolute;
+  top: 10px; right: 11px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+}
+
+.hstat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.hstat-delta {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9fd4b4;
+  margin-left: 5px;
+}
+
+.hstat-label {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.44);
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* cross-reference chips inside hero */
+.hero-xrefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.xref-chip {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.62);
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+.xref-chip:hover {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.3);
+}
+.xref-chip .chip-arrow { margin-left: 4px; opacity: 0.5; }
+
+/* ── PROSE BLOCK ── */
+.prose {
+  font-size: 14.5px;
+  line-height: 1.78;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.prose strong { color: var(--ink); font-weight: 600; }
+
+/* ── STAT ROW (full-width) ── */
+.stat-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.scard {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  padding: 18px 20px;
+}
+
+.scard.accent-left { border-left: 3px solid var(--green); }
+.scard.warn-left   { border-left: 3px solid var(--red); }
+.scard.gold-left   { border-left: 3px solid var(--gold); }
+.scard.blue-left   { border-left: 3px solid var(--blue); }
+
+.scard-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+.scard-sub { font-size: 11.5px; color: var(--ink-muted); margin-top: 3px; }
+.scard-label { font-size: 13px; color: var(--ink-soft); margin-top: 8px; font-weight: 500; }
+
+/* mini breakdown inside card */
+.mini-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.mini { background: var(--paper-warm); border-radius: 4px; padding: 7px 11px; text-align:center; flex: 1; min-width: 52px; }
+.mini-v { font-size: 16px; font-weight: 600; color: var(--ink); }
+.mini-l { font-size: 10.5px; color: var(--ink-muted); margin-top: 2px; }
+
+/* ── CAPABILITY BARS ── */
+.cap-section { margin-bottom: 8px; }
+
+.cap-threshold-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-align: right;
+  padding-right: 4px;
+  margin-bottom: 6px;
+  /* position relative to bar area */
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  align-items: center;
+}
+
+.cap-rows { display: flex; flex-direction: column; gap: 13px; }
+
+.cap-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 40px;
+  align-items: center;
+  gap: 16px;
+}
+
+.cap-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.cap-name.is-gap { color: var(--red); }
+
+.bar-wrap {
+  position: relative;
+  height: 9px;
+  background: var(--rule-soft);
+  border-radius: 9px;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 9px;
+  transition: width 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.bar-fill.ok  { background: var(--green); }
+.bar-fill.gap { background: var(--red); }
+
+.threshold-mark {
+  position: absolute;
+  left: 60%;
+  top: -5px;
+  bottom: -5px;
+  width: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+.cap-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+}
+.cap-score.ok  { color: var(--green); }
+.cap-score.gap { color: var(--red); }
+
+.gap-box {
+  margin-top: 18px;
+  background: var(--red-light);
+  border: 1px solid #f0ccbc;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--red);
+  line-height: 1.65;
+}
+.gap-box strong { font-weight: 600; }
+
+/* ── TIMELINE ── */
+.timeline {
+  position: relative;
+  padding: 36px 0 16px;
+}
+
+.tl-line {
+  position: absolute;
+  top: 52px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: var(--rule);
+}
+
+.tl-nodes {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.tnode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+}
+
+.tnode-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--rule);
+  background: var(--paper);
+  position: relative;
+  z-index: 2;
+}
+.tnode.done  .tnode-dot { background: var(--green); border-color: var(--green); }
+.tnode.now   .tnode-dot { background: #fff; border-color: var(--ink); border-width: 3px; box-shadow: 0 0 0 3px rgba(45,90,61,0.18); }
+.tnode.proj  .tnode-dot { background: var(--paper); border-color: var(--gold); border-style: dashed; }
+.tnode.future .tnode-dot { background: var(--paper); border-color: var(--rule); }
+
+.tnode-level {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.tnode.future .tnode-level { color: var(--ink-muted); }
+
+.tnode-date {
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.tnode-badge {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.tb-done   { background: var(--green-light); color: var(--green); }
+.tb-now    { background: var(--ink); color: #fff; }
+.tb-proj   { background: var(--gold-light); color: var(--gold); border: 1px dashed var(--gold); }
+.tb-plan   { background: var(--paper-warm); color: var(--ink-muted); }
+
+.career-cards {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.cc {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 15px 17px;
+}
+.cc.ahead { border-left: 3px solid var(--gold); }
+.cc-label { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-muted); margin-bottom: 5px; }
+.cc-val { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.cc-sub { font-size: 11.5px; color: var(--ink-muted); margin-top: 3px; }
+
+/* ── KPI TABLE ── */
+.kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.kpi-table th {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-muted);
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+}
+.kpi-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+  vertical-align: middle;
+}
+.kpi-table tr:last-child td { border-bottom: none; }
+.kpi-name { font-weight: 500; color: var(--ink); }
+.kpi-nums { font-family: 'DM Mono', monospace; font-size: 12.5px; }
+
+.mini-bar { height: 5px; background: var(--rule-soft); border-radius: 5px; width: 100px; overflow: hidden; }
+.mini-fill { height: 100%; border-radius: 5px; }
+.mf-hit  { background: var(--green); }
+.mf-miss { background: var(--red); }
+.mf-partial { background: var(--gold); }
+
+.spill {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.2px;
+}
+.sp-hit     { background: var(--green-light); color: var(--green); }
+.sp-miss    { background: var(--red-light);   color: var(--red); }
+.sp-partial { background: var(--gold-light);  color: var(--gold); }
+.sp-pending { background: var(--paper-warm);  color: var(--ink-muted); }
+
+.kpi-footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  flex-wrap: wrap;
+}
+.verified-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 10px;
+}
+
+/* ── CONSTRAINTS ── */
+.cst-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.cst-s {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.cst-s-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.cst-s-label { font-size: 10.5px; color: var(--ink-muted); margin-top: 2px; }
+
+.cst-list { display: flex; flex-direction: column; gap: 10px; }
+
+.cst-item {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 13px 15px;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.cst-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.dot-ok   { background: var(--green); }
+.dot-open { background: var(--red); }
+
+.cst-body { flex: 1; }
+.cst-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+
+.cst-tags {
+  display: flex; gap: 7px; margin-top: 6px; flex-wrap: wrap; align-items: center;
+}
+
+.ctag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--paper-warm);
+  color: var(--ink-muted);
+}
+.ctag-status {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+.cs-ok   { background: var(--green-light); color: var(--green); }
+.cs-open { background: var(--red-light);   color: var(--red); }
+
+/* ── COLLAPSIBLE ── */
+details {
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+summary {
+  padding: 12px 17px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  background: var(--card);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '＋'; font-size: 13px; color: var(--ink-muted); }
+details[open] summary::after { content: '－'; }
+
+.details-inner { padding: 4px 17px 17px; background: var(--card); }
+
+/* ── IP LIST ── */
+.ip-list { display: flex; flex-direction: column; }
+
+.ip-item {
+  display: flex;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  align-items: flex-start;
+}
+.ip-item:last-child { border-bottom: none; }
+
+.ip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.ip-desc { font-size: 13.5px; color: var(--ink-soft); flex: 1; line-height: 1.5; }
+.ip-desc b { color: var(--ink); font-weight: 500; }
+
+.ip-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 64px;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+  width: 32px;
+  height: 2px;
+  background: var(--rule);
+  border-radius: 2px;
+  margin: 52px auto 0;
+}
+
+/* cross-ref note inside sections */
+.xref-note {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.xref-note a {
+  color: var(--green);
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+}
+.xref-note a:hover { text-decoration: underline; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════════════════════════
+     HEADER
+═══════════════════════════════════ -->
+<header class="header">
+  <div class="avatar">
+    <span class="avatar-initials">RI</span>
+  </div>
+
+  <div class="header-main">
+    <div class="employee-name">Rajan Iyer</div>
+    <div class="employee-role">Production Planning Lead — Sterile Injectables</div>
+    <div class="header-meta">
+      <span class="hmeta">Program: <b>Facility 3 Commercialization</b></span>
+      <span class="hmeta">Org: <b>Vayura Lifesciences</b></span>
+      <span class="hmeta">Level: <b>V2</b> · Tenure: <b>19 months</b></span>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div class="period">March 2026</div>
+    <div class="uid">PDGMS-EMP-00512</div>
+    <button class="export-btn no-print" onclick="window.print()">↓ Export PDF</button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     SECTION 0 — MONTHLY IN REVIEW
+═══════════════════════════════════ -->
+<div class="hero" id="sec-review">
+  <div class="hero-card">
+    <div class="hero-eyebrow">Monthly In Review · March 2026</div>
+    <div class="hero-headline">
+      Strong delivery month — <em>broke a 3-month regulatory logjam</em>, growing in 4 of 5 areas, and tracking early for promotion.
+    </div>
+    <div class="hero-sub">
+      Composite score rose from 64 → 71 (+7). Delivered 16 of 20 tasks at 80% completion — his best rate since joining. Delivery and original work scores already exceed V3 requirements. Two growth areas remain below threshold: see <a onclick="gotoSec('sec-capability')" style="color:#9fd4b4; cursor:pointer;">Growth Areas ↓</a>.
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat" onclick="gotoSec('sec-capability')">
+        <div class="hstat-arrow">↓</div>
+        <div class="hstat-val">71 <span class="hstat-delta">+7</span></div>
+        <div class="hstat-label">Composite Score<br>was 64 last month</div>
+      </div>
+      <div class="hstat" onclick="gotoSec('sec-delivery')">
+        <div class="hstat-arrow">↓</div>
+        <div class="hstat-val">16<span style="font-size:16px; opacity:0.5">/20</span></div>
+        <div class="hstat-label">Deliverables done<br>80% completion rate</div>
+      </div>
+      <div class="hstat" onclick="gotoSec('sec-delivery')">
+        <div class="hstat-arrow">↓</div>
+        <div class="hstat-val">7</div>
+        <div class="hstat-label">Original contributions<br>1 adopted org-wide</div>
+      </div>
+      <div class="hstat" onclick="gotoSec('sec-career')">
+        <div class="hstat-arrow">↓</div>
+        <div class="hstat-val">V3</div>
+        <div class="hstat-label">Next level projected<br>3 months ahead of plan</div>
+      </div>
+    </div>
+
+    <div class="hero-xrefs">
+      <button class="xref-chip" onclick="gotoSec('sec-delivery')">What I Delivered <span class="chip-arrow">↓</span></button>
+      <button class="xref-chip" onclick="gotoSec('sec-kpi')">Business Impact <span class="chip-arrow">↓</span></button>
+      <button class="xref-chip" onclick="gotoSec('sec-capability')">Growth Areas <span class="chip-arrow">↓</span></button>
+      <button class="xref-chip" onclick="gotoSec('sec-constraints')">Barriers <span class="chip-arrow">↓</span></button>
+      <button class="xref-chip" onclick="gotoSec('sec-career')">Career Outlook <span class="chip-arrow">↓</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 1 — WHAT I DELIVERED
+═══════════════════════════════════ -->
+<section class="section" id="sec-delivery">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <span class="sec-title">What I Delivered</span>
+    <span class="sec-pill pill-green">80% completion · highest this program</span>
+  </div>
+
+  <p class="narrative-line">
+    "This month I closed the process validation protocol that had been stuck since December — and seven of my original contributions are now being used by teams beyond my own."
+    <span style="display:block; margin-top:4px; font-style:normal; font-size:12px; color:var(--ink-muted);">For employees: what you shipped. For supervisors &amp; HR: verified output volume and quality signal.</span>
+  </p>
+
+  <!-- Full-width stat row -->
+  <div class="stat-row">
+    <div class="scard accent-left">
+      <div class="scard-val">16</div>
+      <div class="scard-sub">of 20 assigned · QA passed</div>
+      <div class="scard-label">Deliverables Completed</div>
+      <div class="mini-row">
+        <div class="mini"><div class="mini-v">2</div><div class="mini-l">In Progress</div></div>
+        <div class="mini"><div class="mini-v">1</div><div class="mini-l">Awaiting Review</div></div>
+        <div class="mini"><div class="mini-v">1</div><div class="mini-l">Not Started</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="scard" style="border-left: 3px solid var(--ink-muted);">
+      <div class="scard-val">7</div>
+      <div class="scard-sub">original knowledge contributions this month</div>
+      <div class="scard-label">Original Work Created</div>
+      <div class="mini-row">
+        <div class="mini" style="background: var(--green-light);">
+          <div class="mini-v" style="font-size:12px; color:var(--green);">1 adopted org-wide</div>
+          <div class="mini-l">Deviation SOP → mandated across all 3 facilities by Head of Quality</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    Rajan shipped 16 of 20 deliverables — his <strong>highest completion rate since the Facility 3 program launched</strong>. The process validation protocol was the critical win: it had been cycling between regulatory affairs and QA since December, and Rajan broke the logjam by organising a <strong>joint review session</strong> with both teams rather than sequential sign-offs. He created 7 original work items, including the deviation investigation SOP that the Head of Quality has since <strong>mandated as the standard across all three manufacturing facilities</strong>.
+  </div>
+
+  <!-- Top 3 IP items visible, rest collapsed -->
+  <div style="margin-bottom: 6px;">
+    <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--ink-muted); margin-bottom:10px;">Top 3 Original Contributions</div>
+    <div class="ip-list">
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc"><b>Process validation protocol</b> — lyophilized injectable line (3 product families, 12 SKUs)</div>
+        <div class="ip-date">05 Mar</div>
+      </div>
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc"><b>Deviation investigation SOP</b> — root cause analysis for OOS results. <span style="color:var(--green); font-weight:500;">Adopted org-wide.</span></div>
+        <div class="ip-date">14 Mar</div>
+      </div>
+      <div class="ip-item">
+        <div class="ip-dot"></div>
+        <div class="ip-desc"><b>Yield optimisation report</b> — identified 8% fill-weight variance in vial line 2, proposed nozzle recalibration</div>
+        <div class="ip-date">29 Mar</div>
+      </div>
+    </div>
+  </div>
+
+  <details>
+    <summary>4 more original contributions</summary>
+    <div class="details-inner">
+      <div class="ip-list">
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc">Batch record template — sterile fill-finish operations with in-process control checkpoints</div>
+          <div class="ip-date">09 Mar</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc">Equipment qualification matrix — IQ/OQ/PQ status tracker for 14 critical items in Facility 3</div>
+          <div class="ip-date">18 Mar</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc">Environmental monitoring trend analysis — 6-month particulate and viable data for Grade A/B cleanrooms</div>
+          <div class="ip-date">22 Mar</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc">Vendor qualification checklist — raw material and primary packaging supplier audit framework</div>
+          <div class="ip-date">26 Mar</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details style="margin-top: 10px;">
+    <summary>Full deliverable breakdown (16 completed · 4 pending)</summary>
+    <div class="details-inner" style="padding-top:14px;">
+      <table class="kpi-table" style="font-size:12.5px;">
+        <thead><tr><th>Ticket</th><th>Deliverable</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="kpi-nums">TKT-3001</td><td>Process validation protocol — lyophilized injectable line</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3002</td><td>Batch record template — sterile fill-finish</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3003</td><td>Deviation investigation SOP</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3004</td><td>Equipment qualification matrix — 14 items</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3005</td><td>IQ/OQ execution — autoclave unit 3</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3006</td><td>IQ/OQ execution — vial washing machine</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3007</td><td>PQ execution — lyophilizer cycle development</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3008</td><td>Environmental monitoring trend analysis</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3009</td><td>Cleanroom 3B particulate excursion investigation</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3010</td><td>Vendor qualification checklist — raw materials</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3011</td><td>Vendor qualification checklist — primary packaging</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3012</td><td>Yield optimisation report — vial line 2</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3013</td><td>Operator training batch 1 — aseptic filling</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3014</td><td>Operator training batch 2 — lyophilization loading</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3015</td><td>Operator training batch 3 — CIP/SIP procedures</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3016</td><td>Operator training batch 4 — environmental monitoring</td><td><span class="spill sp-hit">Done</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3017</td><td>Compressed air system DQ/IQ completion</td><td><span class="spill sp-pending">Awaiting Review</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3018</td><td>Media fill protocol — 3 production lines</td><td><span class="spill sp-partial">In Progress</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3019</td><td>Stability study protocol — first 3 commercial SKUs</td><td><span class="spill sp-partial">In Progress</span></td></tr>
+          <tr><td class="kpi-nums">TKT-3020</td><td>Facility 3 commercial readiness assessment for Q2 review</td><td><span class="spill sp-miss">Not Started</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 2 — BUSINESS IMPACT (KPI)
+═══════════════════════════════════ -->
+<section class="section" id="sec-kpi">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Business Impact</span>
+    <span class="sec-pill pill-green">3 of 5 targets met</span>
+  </div>
+
+  <p class="narrative-line">
+    "Equipment qualifications and SOPs exceeded targets; batch success rate missed by 4 points — directly linked to the HEPA filter delay that caused 2 failed batches."
+    <span style="display:block; margin-top:4px; font-style:normal; font-size:12px; color:var(--ink-muted);">For supervisors &amp; HR: verified output against program targets. Misses are contextualised in <a onclick="gotoSec('sec-constraints')" style="color:var(--green); cursor:pointer; font-weight:500;">Barriers ↓</a>.</span>
+  </p>
+
+  <table class="kpi-table">
+    <thead>
+      <tr>
+        <th>Target</th><th>Actual / Goal</th><th style="width:110px;">Progress</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="kpi-name">Equipment Qualifications</td>
+        <td class="kpi-nums">10 / 8 items</td>
+        <td><div class="mini-bar"><div class="mini-fill mf-hit" style="width:100%"></div></div></td>
+        <td><span class="spill sp-hit">Hit</span></td>
+      </tr>
+      <tr>
+        <td class="kpi-name">SOPs Drafted &amp; Approved</td>
+        <td class="kpi-nums">7 / 5 docs</td>
+        <td><div class="mini-bar"><div class="mini-fill mf-hit" style="width:100%"></div></div></td>
+        <td><span class="spill sp-hit">Hit</span></td>
+      </tr>
+      <tr>
+        <td class="kpi-name">Operator Training Sessions</td>
+        <td class="kpi-nums">4 / 4 batches</td>
+        <td><div class="mini-bar"><div class="mini-fill mf-hit" style="width:100%"></div></div></td>
+        <td><span class="spill sp-hit">Hit</span></td>
+      </tr>
+      <tr>
+        <td class="kpi-name">Batch Success Rate</td>
+        <td class="kpi-nums">88% / 92%</td>
+        <td><div class="mini-bar"><div class="mini-fill mf-miss" style="width:96%"></div></div></td>
+        <td><span class="spill sp-miss">Miss</span></td>
+      </tr>
+      <tr>
+        <td class="kpi-name">Deviation Closure Rate</td>
+        <td class="kpi-nums">67% / 85%</td>
+        <td><div class="mini-bar"><div class="mini-fill mf-partial" style="width:79%"></div></div></td>
+        <td><span class="spill sp-partial">Partial</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="kpi-footer">
+    <span class="verified-chip">✓ 3 of 5 independently verified</span>
+    <span>· Batch rate miss linked to HEPA filter delay → <a onclick="gotoSec('sec-constraints')" style="color:var(--green); cursor:pointer; font-weight:500;">see CST-0421 ↓</a></span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3 — GROWTH AREAS
+═══════════════════════════════════ -->
+<section class="section" id="sec-capability">
+  <div class="sec-header">
+    <span class="sec-num">03</span>
+    <span class="sec-title">Strengths &amp; Growth Areas</span>
+    <span class="sec-pill pill-red">2 areas below V3 threshold</span>
+  </div>
+
+  <p class="narrative-line">
+    "Delivery and engagement lead the pack. The gap is in structured thinking and process adoption — not performance failures, but the edges that separate V2 from V3."
+    <span style="display:block; margin-top:4px; font-style:normal; font-size:12px; color:var(--ink-muted);">For employees: where to focus next. For mentors &amp; HR: what V3 readiness looks like right now.</span>
+  </p>
+
+  <!-- threshold label -->
+  <div style="display:flex; justify-content:flex-end; margin-bottom:8px;">
+    <span style="font-family:'DM Mono',monospace; font-size:10px; color:var(--ink-muted); padding-right: 44px;">← V3 threshold at 60</span>
+  </div>
+
+  <div class="cap-rows">
+    <div class="cap-row">
+      <div class="cap-name">Engagement</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill ok" style="width:85%"></div>
+      </div>
+      <div class="cap-score ok">85</div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-name">Delivery</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill ok" style="width:80%"></div>
+      </div>
+      <div class="cap-score ok">80</div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-name">Original Work</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill ok" style="width:74%"></div>
+      </div>
+      <div class="cap-score ok">74</div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-name">Target Performance</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill ok" style="width:68%"></div>
+      </div>
+      <div class="cap-score ok">68</div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-name is-gap">Structured Thinking ⚠</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill gap" style="width:52%"></div>
+      </div>
+      <div class="cap-score gap">52</div>
+    </div>
+    <div class="cap-row">
+      <div class="cap-name is-gap">Process Adoption ⚠</div>
+      <div class="bar-wrap">
+        <div class="threshold-mark"></div>
+        <div class="bar-fill gap" style="width:58%"></div>
+      </div>
+      <div class="cap-score gap">58</div>
+    </div>
+  </div>
+
+  <div class="gap-box" style="margin-top:18px;">
+    <strong>Two areas below V3 minimum (60):</strong> Structured Thinking (52) and Process Adoption (58). Rajan tends to troubleshoot through direct technical instinct — effective for quick fixes, but root causes sometimes recur. Consciously documenting and applying structured frameworks over the next 3–4 months clears both. Clearing these also unblocks the projected <a onclick="gotoSec('sec-career')" style="color:var(--red); cursor:pointer; font-weight:600;">V3 eligibility date ↓</a>.
+  </div>
+
+  <details>
+    <summary>Framework &amp; process detail (claims this month)</summary>
+    <div class="details-inner" style="padding-top:14px;">
+      <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--ink-muted); margin-bottom:10px;">Frameworks Applied</div>
+      <div class="ip-list">
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc"><b>First Principles Thinking</b> ×3 — decomposed cleanroom particulate data to isolate the failing HEPA filter before vendor confirmed</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc"><b>PDCA Cycle</b> ×2 — used in operator training iteration to improve practical/theory ratio across batches</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-dot"></div>
+          <div class="ip-desc"><b>5 Why Analysis</b> ×1 — traced 8% fill-weight variance to nozzle wear, not operator technique as initially assumed</div>
+        </div>
+      </div>
+      <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--ink-muted); margin: 14px 0 10px;">Processes Followed</div>
+      <div class="ip-list">
+        <div class="ip-item"><div class="ip-dot"></div><div class="ip-desc">Daily Plan Submission — 21 of 23 working days</div></div>
+        <div class="ip-item"><div class="ip-dot"></div><div class="ip-desc">Ticket Lifecycle Update — same-day for all 16 completed deliverables</div></div>
+        <div class="ip-item"><div class="ip-dot"></div><div class="ip-desc">Weekly Report Submission — all 4 on time</div></div>
+        <div class="ip-item"><div class="ip-dot"></div><div class="ip-desc">Change Control Documentation — 3 raised, all with impact assessment completed before implementation</div></div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 4 — BARRIERS & RESOLUTIONS
+═══════════════════════════════════ -->
+<section class="section" id="sec-constraints">
+  <div class="sec-header">
+    <span class="sec-num">04</span>
+    <span class="sec-title">Barriers &amp; Resolutions</span>
+    <span class="sec-pill pill-neutral">5 of 8 resolved · 62%</span>
+  </div>
+
+  <p class="narrative-line">
+    "External dependencies and approval bottlenecks dominated. One resolution — switching to joint regulatory review — now saves 3 weeks per protocol across the program."
+    <span style="display:block; margin-top:4px; font-style:normal; font-size:12px; color:var(--ink-muted);">For supervisors: what was genuinely blocked vs what was fixed. For HR: pattern data on recurring constraint types.</span>
+  </p>
+
+  <div class="cst-summary">
+    <div class="cst-s"><div class="cst-s-val">8</div><div class="cst-s-label">Raised</div></div>
+    <div class="cst-s"><div class="cst-s-val" style="color:var(--green);">5</div><div class="cst-s-label">Resolved</div></div>
+    <div class="cst-s"><div class="cst-s-val" style="color:var(--red);">3</div><div class="cst-s-label">Still Open</div></div>
+    <div class="cst-s"><div class="cst-s-val">62%</div><div class="cst-s-label">Resolution Rate</div></div>
+  </div>
+
+  <!-- Key constraints always visible -->
+  <div class="cst-list">
+    <div class="cst-item">
+      <div class="cst-dot dot-open"></div>
+      <div class="cst-body">
+        <div class="cst-desc">Contract testing lab turnaround on deviation root cause — 4 open deviations waiting 18+ days for results. Directly impacting <a onclick="gotoSec('sec-kpi')" style="color:var(--red); cursor:pointer; font-weight:500;">Deviation Closure Rate KPI ↑</a>.</div>
+        <div class="cst-tags"><span class="ctag">internal_support</span><span class="ctag-status cs-open">Open</span></div>
+      </div>
+    </div>
+    <div class="cst-item">
+      <div class="cst-dot dot-open"></div>
+      <div class="cst-body">
+        <div class="cst-desc">Second-shift supervisor vacancy — production planning limited to single shift since February, capping Facility 3 throughput at ~60% capacity.</div>
+        <div class="cst-tags"><span class="ctag">talent</span><span class="ctag-status cs-open">Open · High impact</span></div>
+      </div>
+    </div>
+    <div class="cst-item">
+      <div class="cst-dot dot-ok"></div>
+      <div class="cst-body">
+        <div class="cst-desc">HEPA filter replacement for Cleanroom 3B delayed — 6-week vendor lead time caused 2 batch failures. Root cause identified by Rajan using First Principles before vendor confirmed. Directly caused <a onclick="gotoSec('sec-kpi')" style="color:var(--green); cursor:pointer; font-weight:500;">Batch Success Rate miss ↑</a>.</div>
+        <div class="cst-tags"><span class="ctag">CST-0421</span><span class="ctag">assumptions</span><span class="ctag-status cs-ok">Resolved 19 Mar</span></div>
+      </div>
+    </div>
+  </div>
+
+  <details>
+    <summary>2 more resolved constraints</summary>
+    <div class="details-inner" style="padding-top:14px;">
+      <div class="cst-list">
+        <div class="cst-item">
+          <div class="cst-dot dot-ok"></div>
+          <div class="cst-body">
+            <div class="cst-desc">Regulatory affairs sequential review adding 3 weeks to every protocol approval — resolved by switching to joint review sessions, saving 3 weeks per protocol going forward.</div>
+            <div class="cst-tags"><span class="ctag">CST-0433</span><span class="ctag">permissions</span><span class="ctag-status cs-ok">Resolved 05 Mar</span></div>
+          </div>
+        </div>
+        <div class="cst-item">
+          <div class="cst-dot dot-ok"></div>
+          <div class="cst-body">
+            <div class="cst-desc">Assumed Facility 3 compressed air system was qualified — discovered DQ/IQ incomplete during batch review. Addressed in TKT-3017 (now awaiting review).</div>
+            <div class="cst-tags"><span class="ctag">CST-0445</span><span class="ctag">assumptions</span><span class="ctag-status cs-ok">Resolved 24 Mar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5 — CAREER OUTLOOK (compact)
+═══════════════════════════════════ -->
+<section class="section" id="sec-career">
+  <div class="sec-header">
+    <span class="sec-num">05</span>
+    <span class="sec-title">Career Outlook</span>
+    <span class="sec-pill pill-gold">3 months ahead of plan</span>
+  </div>
+
+  <p class="narrative-line">
+    "Delivery and original work already exceed V3 requirements — unusual for someone 5 months into V2. Clearing the two growth-area gaps unlocks early promotion eligibility."
+    <span style="display:block; margin-top:4px; font-style:normal; font-size:12px; color:var(--ink-muted);">For employees &amp; mentors: where you are, where you're going, what's in the way. See <a onclick="gotoSec('sec-capability')" style="color:var(--gold); cursor:pointer; font-weight:500;">Growth Areas ↑</a> for gap detail.</span>
+  </p>
+
+  <!-- Compact timeline -->
+  <div class="timeline">
+    <div class="tl-line"></div>
+    <div class="tl-nodes">
+      <div class="tnode done">
+        <div class="tnode-dot"></div>
+        <div class="tnode-level">V1</div>
+        <div class="tnode-date">Aug 2024</div>
+        <span class="tnode-badge tb-done">Done</span>
+      </div>
+      <div class="tnode now">
+        <div class="tnode-dot"></div>
+        <div class="tnode-level">V2</div>
+        <div class="tnode-date">Nov 2025<br>5 mo in</div>
+        <span class="tnode-badge tb-now">Now</span>
+      </div>
+      <div class="tnode proj">
+        <div class="tnode-dot"></div>
+        <div class="tnode-level">V3</div>
+        <div class="tnode-date">Feb 2027 proj<br><span style="color:var(--gold); font-size:10px;">Plan: May 2027</span></div>
+        <span class="tnode-badge tb-proj">3 mo early</span>
+      </div>
+      <div class="tnode future">
+        <div class="tnode-dot"></div>
+        <div class="tnode-level">V4</div>
+        <div class="tnode-date">Aug 2030</div>
+        <span class="tnode-badge tb-plan">Planned</span>
+      </div>
+      <div class="tnode future">
+        <div class="tnode-dot"></div>
+        <div class="tnode-level">V5</div>
+        <div class="tnode-date">Aug 2036</div>
+        <span class="tnode-badge tb-plan">Planned</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="career-cards">
+    <div class="cc ahead">
+      <div class="cc-label">Projected V3 Date</div>
+      <div class="cc-val">February 2027</div>
+      <div class="cc-sub">3 months ahead of plan · Ladder: MFG-001</div>
+    </div>
+    <div class="cc">
+      <div class="cc-label">Already exceeds V3 threshold</div>
+      <div class="cc-val">Delivery (80) · Original Work (74)</div>
+      <div class="cc-sub">Unusual for 5 months at V2</div>
+    </div>
+  </div>
+
+  <details style="margin-top:14px;">
+    <summary>What needs to close before V3 eligibility</summary>
+    <div class="details-inner" style="padding-top:14px;">
+      <div class="cst-list">
+        <div class="cst-item" style="border: none; padding: 0 0 10px;">
+          <div class="cst-dot" style="background:var(--red); margin-top:6px;"></div>
+          <div class="cst-desc" style="color:var(--red);">Structured Thinking score (52) below V3 minimum (60) — gap of 8 points. See <a onclick="gotoSec('sec-capability')" style="color:var(--red); cursor:pointer; font-weight:500;">Growth Areas ↑</a>.</div>
+        </div>
+        <div class="cst-item" style="border: none; padding: 0;">
+          <div class="cst-dot" style="background:var(--red); margin-top:6px;"></div>
+          <div class="cst-desc" style="color:var(--red);">Process Adoption score (58) below V3 minimum (60) — gap of 2 points. See <a onclick="gotoSec('sec-capability')" style="color:var(--red); cursor:pointer; font-weight:500;">Growth Areas ↑</a>.</div>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="footer">
+  <span>PDGMS-EMP-00512 · PF-2026-03-00512</span>
+  <span>Generated 02 Apr 2026 · Vayura Lifesciences · PDGMS v1</span>
+</footer>
+
+</div><!-- /page -->
+
+<script>
+  // Intersection observer for fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06 });
+
+  document.querySelectorAll('.section, .hero').forEach(el => obs.observe(el));
+
+  // Smooth scroll
+  function gotoSec(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>
